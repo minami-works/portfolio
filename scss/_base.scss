@@ -1,0 +1,47 @@
+@use "_variables" as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: $color-base;
+  color: $color-text;
+  font-family: "Outfit", "Noto Sans JP", sans-serif;
+  line-height: 1.7;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid $color-green;
+  outline-offset: 4px;
+}
+
+.site {
+  max-width: 1120px;
+  margin: 0 auto;
+  background: $color-surface;
+  border-right: 1px solid $color-line;
+  border-left: 1px solid $color-line;
+}

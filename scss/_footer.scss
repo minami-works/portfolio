@@ -1,0 +1,28 @@
+@charset "UTF-8";
+@use "_variables" as *;
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 20px;
+  color: $color-muted;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+
+  &__links {
+    display: flex;
+    gap: 18px;
+    list-style: none;
+  }
+
+  @media (min-width: 761px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 28px;
+  }
+}
