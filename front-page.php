@@ -216,10 +216,10 @@
               <div class="detail-block">
                 <h4>Overview</h4>
                 <?php if ( $overview ) : ?>
-                  <p><?php echo esc_html( $overview ); ?></p>
+                  <p><?php echo nl2br( esc_html( $overview ) ); ?></p>
                 <?php endif; ?>
                 <?php if ( $overview_note ) : ?>
-                  <p class="detail-block__note"><?php echo esc_html( $overview_note ); ?></p>
+                  <p class="detail-block__note"><?php echo nl2br( esc_html( $overview_note ) ); ?></p>
                 <?php endif; ?>
               </div>
               <?php if ( $points ) : ?>
