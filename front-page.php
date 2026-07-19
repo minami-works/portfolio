@@ -188,10 +188,10 @@
                 <span class="btn-icon" aria-hidden="true">+</span>
               </button>
               <?php if ( $github_url ) : ?>
-                <a class="text-link" href="<?php echo esc_url( $github_url ); ?>" aria-label="<?php the_title(); ?>のGitHubを見る">GitHub</a>
+                <a class="text-link" href="<?php echo esc_url( $github_url ); ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php the_title(); ?>のGitHubを見る（別タブで開きます）">GitHub</a>
               <?php endif; ?>
               <?php if ( $site_url ) : ?>
-                <a class="text-link" href="<?php echo esc_url( $site_url ); ?>" aria-label="<?php the_title(); ?>の公開サイトを見る"><?php echo esc_html( $site_label ? $site_label : 'View Site' ); ?></a>
+                <a class="text-link" href="<?php echo esc_url( $site_url ); ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php the_title(); ?>の公開サイトを見る（別タブで開きます）"><?php echo esc_html( $site_label ? $site_label : 'View Site' ); ?></a>
               <?php endif; ?>
             </div>
           </div>
@@ -333,12 +333,8 @@
           </button>
         </form>
         <div class="contact__actions">
-          <a class="contact__link" href="https://github.com/minami-works"
-            >GitHub</a
-          >
-          <a class="contact__link" href="https://x.com/mnm_codes"
-            >X / Twitter</a
-          >
+          <a class="contact__link" href="https://github.com/minami-works" target="_blank" rel="noopener noreferrer" aria-label="GitHubプロフィールを見る（別タブで開きます）">GitHub</a>
+          <a class="contact__link" href="https://x.com/mnm_codes" target="_blank" rel="noopener noreferrer" aria-label="Xのプロフィールを見る（別タブで開きます）">X / Twitter</a>
         </div>
       </div>
     </div>
