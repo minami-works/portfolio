@@ -11,9 +11,10 @@
   <meta property="og:title" content="Minami Gouda | Web Coder Portfolio" />
 <meta property="og:url" content="<?php echo home_url( '/' ); ?>" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/ogimage.png" />
+<meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/img/ogimage.png" />
   <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico" type="image/x-icon" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap"
