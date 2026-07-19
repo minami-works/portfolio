@@ -3,7 +3,7 @@
 
 .hero {
   position: relative;
-  min-height: 610px;
+  min-height: 480px;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -38,7 +38,7 @@
     width: 100%;
     max-width: $content-width;
     margin: 0 auto;
-    padding: 72px 20px 46px;
+    padding: 48px 20px 46px;
   }
 
   &__kicker {
