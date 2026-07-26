@@ -39,6 +39,7 @@
     max-width: $content-width;
     margin: 0 auto;
     padding: 48px 20px 46px;
+    animation: heroFadeIn 0.8s ease both;
   }
 
   &__kicker {
@@ -115,5 +116,15 @@
     &__content {
       padding: 84px 28px 70px;
     }
+  }
+}
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

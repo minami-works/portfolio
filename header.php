@@ -29,7 +29,20 @@
   <header class="header">
     <nav class="header__nav" aria-label="メインナビゲーション">
       <a class="header__nav-name" href="#top">Minami Gouda</a>
-      <ul class="header__nav-links">
+
+      <button
+        class="header__hamburger"
+        type="button"
+        aria-expanded="false"
+        aria-controls="header-nav-links"
+        aria-label="メニューを開く"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="header__nav-links" id="header-nav-links">
         <li><a class="header__nav-link" href="#about">About</a></li>
         <li><a class="header__nav-link" href="#skills">Skills</a></li>
         <li><a class="header__nav-link" href="#works">Works</a></li>
@@ -38,3 +51,4 @@
       </ul>
     </nav>
   </header>
+  <div class="header__overlay"></div>

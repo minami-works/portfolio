@@ -6,7 +6,10 @@
       <li><a href="#price">Price</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-  </footer>
+</footer>
+  <button class="back-to-top" type="button" aria-label="ページの先頭へ戻る">
+    ↑
+  </button>
 </div><!-- /.site -->
 <script src="<?php echo get_template_directory_uri(); ?>/script.js"></script>
 <?php wp_footer(); ?>

@@ -149,7 +149,7 @@
         $points        = $points_raw ? array_filter( array_map('trim', explode("\n", $points_raw)) ) : array();
         $accordion_id  = 'work-' . get_the_ID();
     ?>
-      <article class="work__item">
+      <article class="work__item js-fade-in">
         <div class="work__main">
           <div class="work__info">
             <div class="work__title-row">

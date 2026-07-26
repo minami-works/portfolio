@@ -45,3 +45,17 @@ a:focus-visible {
   border-right: 1px solid $color-line;
   border-left: 1px solid $color-line;
 }
+
+// フェードイン共通（Works用・スクロール検知）
+.js-fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
