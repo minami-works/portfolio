@@ -2,10 +2,15 @@
 
 <main>
   <section class="hero" aria-labelledby="hero-title">
+    <?php // 最初に見える画像なので lazy にせず、優先的に読み込ませる ?>
     <img
       class="hero__img"
-      src="<?php echo get_template_directory_uri(); ?>/img/mv2.png"
+      src="<?php echo get_template_directory_uri(); ?>/img/mv2.webp"
       alt="木漏れ日の入るデスクに置かれたノートパソコン"
+      width="1983"
+      height="793"
+      fetchpriority="high"
+      decoding="async"
     />
     <div class="hero__content">
       <p class="hero__kicker">Web Coder / Hokkaido, Japan</p>
@@ -34,9 +39,13 @@
       <div class="about__intro">
         <p class="about__note">Partner for production teams</p>
         <img
-          src="<?php echo get_template_directory_uri(); ?>/img/minami-icon.png"
+          src="<?php echo get_template_directory_uri(); ?>/img/minami-icon.webp"
           alt="PCに向かって作業しているイラスト"
           class="about__icon"
+          width="420"
+          height="420"
+          loading="lazy"
+          decoding="async"
         />
         <p class="about__catch">
           コードを書いてサイトが形になっていく瞬間が、一番好きです。
@@ -197,12 +206,28 @@
           </div>
           <div class="polaroid">
             <div class="polaroid-mockup">
-              <?php if ( $image_pc ) : ?>
-                <img class="polaroid-pc" src="<?php echo esc_url( $image_pc['url'] ); ?>" alt="<?php the_title(); ?> PCサイト" />
-              <?php endif; ?>
-              <?php if ( $image_sp ) : ?>
-                <img class="polaroid-sp-thumb" src="<?php echo esc_url( $image_sp['url'] ); ?>" alt="<?php the_title(); ?> スマホサイト" />
-              <?php endif; ?>
+              <?php
+              // ACFの ['url'] は常にフルサイズを返すため、IDを渡して
+              // WordPressに srcset / sizes / width / height を生成させる
+              if ( $image_pc ) {
+                echo wp_get_attachment_image( $image_pc['ID'], 'medium_large', false, array(
+                  'class'    => 'polaroid-pc',
+                  'alt'      => get_the_title() . ' PCサイト',
+                  'sizes'    => '(max-width: 767px) 280px, 240px',
+                  'loading'  => 'lazy',
+                  'decoding' => 'async',
+                ) );
+              }
+              if ( $image_sp ) {
+                echo wp_get_attachment_image( $image_sp['ID'], 'medium_large', false, array(
+                  'class'    => 'polaroid-sp-thumb',
+                  'alt'      => get_the_title() . ' スマホサイト',
+                  'sizes'    => '90px',
+                  'loading'  => 'lazy',
+                  'decoding' => 'async',
+                ) );
+              }
+              ?>
             </div>
             <p class="polaroid-caption">
               <?php the_title(); ?><?php if ( $work_ja ) : ?> — <?php echo esc_html( $work_ja ); ?><?php endif; ?>
@@ -314,20 +339,47 @@
           method="POST"
           class="contact__form"
         >
-          <input
-            type="email"
-            name="email"
-            class="contact__form-input"
-            placeholder="返信先のメールアドレス"
-            required
-          />
-          <textarea
-            name="message"
-            class="contact__form-textarea"
-            placeholder="お問い合わせ内容"
-            rows="4"
-            required
-          ></textarea>
+          <div class="contact__form-row">
+            <label class="contact__form-label" for="cf-name">お名前 / 会社名</label>
+            <input
+              type="text"
+              id="cf-name"
+              name="name"
+              class="contact__form-input"
+              autocomplete="organization"
+              required
+            />
+          </div>
+
+          <div class="contact__form-row">
+            <label class="contact__form-label" for="cf-email">返信先メールアドレス</label>
+            <input
+              type="email"
+              id="cf-email"
+              name="email"
+              class="contact__form-input"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="contact__form-row">
+            <label class="contact__form-label" for="cf-message">お問い合わせ内容</label>
+            <textarea
+              id="cf-message"
+              name="message"
+              class="contact__form-textarea"
+              rows="6"
+              required
+            ></textarea>
+          </div>
+
+          <?php // 送信後にFormspreeのページではなく自サイトへ戻す ?>
+          <input type="hidden" name="_next" value="<?php echo esc_url( home_url( '/thanks/' ) ); ?>" />
+          <input type="hidden" name="_subject" value="【minamiworks】お問い合わせ" />
+          <?php // ハニーポット（BOTだけが入力する隠しフィールド） ?>
+          <input type="text" name="_gotcha" class="contact__form-gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
           <button type="submit" class="contact__form-submit">
             送信する
           </button>

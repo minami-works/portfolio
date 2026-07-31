@@ -5,8 +5,11 @@ $color-surface-soft: #efede8;
 $color-line: #ddd8cf;
 $color-text: #282724;
 $color-sub: #6d675f;
-$color-muted: #9a9286;
-$color-green: #5f8262;
+// $color-muted / $color-green はWCAG AA（4.5:1）を満たす値に調整
+// 旧 #9a9286 → 2.5〜2.8:1 で基準未達だった
+$color-muted: #6b6459; // surface比 5.4:1
+// 旧 #5f8262 → 3.6〜4.0:1 で基準未達だった
+$color-green: #4e6b51; // surface比 5.4:1 / green-soft比 4.9:1
 $color-green-soft: #e4ebe1;
 $color-cream: #fbfaf7;
 $color-dark: #2b2b27;

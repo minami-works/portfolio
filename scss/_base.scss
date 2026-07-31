@@ -44,6 +44,17 @@ a:focus-visible {
   background: $color-surface;
   border-right: 1px solid $color-line;
   border-left: 1px solid $color-line;
+
+  // 中身が短いページ（404 / thanks）でもフッターが画面下に来るようにする
+  min-height: 100vh;
+  min-height: 100dvh; // スマホのアドレスバー分を除いた実際の高さ
+  display: flex;
+  flex-direction: column;
+}
+
+// 余った高さをmainが引き受ける → フッターが押し下げられる
+main {
+  flex: 1;
 }
 
 // フェードイン共通（Works用・スクロール検知）

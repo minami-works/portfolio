@@ -23,6 +23,7 @@
   &__icon {
     width: 100%;
     max-width: 140px;
+    height: auto; // width/height属性を付けたので比率はブラウザに計算させる
     border-radius: 8px;
   }
 
