@@ -11,7 +11,7 @@
     ↑
   </button>
 </div><!-- /.site -->
-<script src="<?php echo get_template_directory_uri(); ?>/script.js"></script>
+<script src="<?php echo esc_url( get_template_directory_uri() . '/script.js?ver=' . filemtime( get_template_directory() . '/script.js' ) ); ?>"></script>
 <?php wp_footer(); ?>
 </body>
 </html>
