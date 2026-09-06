@@ -8,7 +8,6 @@ get_header(); ?>
 <main>
   <section class="section" aria-labelledby="thanks-title">
     <div class="section__head">
-      <p class="section__label">Thank you</p>
       <h2 class="section__title" id="thanks-title">
         お問い合わせありがとうございます。
       </h2>

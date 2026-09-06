@@ -124,7 +124,7 @@
   align-items: center;
   justify-content: center;
   min-height: 34px;
-  border-radius: 999px;
+  border-radius: 8px;
   font-family: $font-en, $font-jp;
   font-size: 12px;
   letter-spacing: 0.04em;
@@ -188,13 +188,13 @@
   }
 
   &.books {
-    background: linear-gradient(135deg, #e8ede3 0%, #bccbac 100%);
+    background: #bccbac;
   }
   &.corporate {
-    background: linear-gradient(135deg, #ebece8 0%, #b7c0bb 100%);
+    background: #b7c0bb;
   }
   &.cafe {
-    background: linear-gradient(135deg, #eee8df 0%, #cbbcb0 100%);
+    background: #cbbcb0;
   }
 }
 
@@ -281,17 +281,12 @@
 }
 
 .accordion-inner {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
   max-width: $content-width;
   margin: 0 auto;
   padding: 30px 20px 34px;
   border-top: 1px solid $color-line;
 
   @media (min-width: 761px) {
-    grid-template-columns: 160px 1fr;
-    gap: 28px;
     padding: 30px $gutter 34px;
   }
 }
@@ -307,7 +302,8 @@
 }
 
 .detail-block {
-  h3 {
+  h3,
+  h4 {
     margin-bottom: 6px;
     color: $color-muted;
     font-size: 11px;

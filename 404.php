@@ -8,7 +8,6 @@ get_header(); ?>
 <main>
   <section class="section" aria-labelledby="notfound-title">
     <div class="section__head">
-      <p class="section__label">404</p>
       <h2 class="section__title" id="notfound-title">
         お探しのページが見つかりませんでした。
       </h2>

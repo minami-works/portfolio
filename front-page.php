@@ -13,7 +13,6 @@
       decoding="async"
     />
     <div class="hero__content">
-      <p class="hero__kicker">Web Coder / Hokkaido, Japan</p>
       <h1 class="hero__title" id="hero-title">Minami<br />Gouda</h1>
       <p class="hero__lead">
         デザインの意図を汲み取りながら、保守しやすく丁寧なコーディングを行います。<br />
@@ -30,7 +29,6 @@
 
   <section class="section" id="about" aria-labelledby="about__title">
     <div class="section__head">
-      <p class="section__label">About</p>
       <h2 class="section__title" id="about__title">
         見た目の再現だけでなく、納品後の運用や修正まで見据えた実装を大切にしています。
       </h2>
@@ -87,7 +85,6 @@
 
   <section class="section" id="skills" aria-labelledby="skills__title">
     <div class="section__head">
-      <p class="section__label">Skills</p>
       <h2 class="section__title" id="skills__title">
         実務フローに乗せやすい、堅実なコーディングスキルを磨いています。
       </h2>
@@ -126,7 +123,6 @@
 
 <section class="section works" id="works" aria-labelledby="works__title">
   <div class="section__head">
-    <p class="section__label">Works</p>
     <h2 class="section__title" id="works__title">
       制作意図・担当範囲・使用技術をまとめた制作実績です。
     </h2>
@@ -158,7 +154,7 @@
         $points        = $points_raw ? array_filter( array_map('trim', explode("\n", $points_raw)) ) : array();
         $accordion_id  = 'work-' . get_the_ID();
     ?>
-      <article class="work__item js-fade-in">
+      <article class="work__item">
         <div class="work__main">
           <div class="work__info">
             <div class="work__title-row">
@@ -236,8 +232,7 @@
         </div>
         <div class="accordion" id="<?php echo esc_attr( $accordion_id ); ?>">
           <div class="accordion-inner">
-            <p class="section-label">Details</p>
-            <div class="detail-grid">
+                <div class="detail-grid">
               <div class="detail-block">
                 <h4>Overview</h4>
                 <?php if ( $overview ) : ?>
@@ -273,7 +268,6 @@
 
   <section class="section" id="price" aria-labelledby="price__title">
     <div class="section__head">
-      <p class="section__label">Price</p>
       <h2 class="section__title" id="price__title">
         「これ入れて」を、取りこぼさず反映します。低価格から、確認ベースで進められます。
       </h2>
@@ -301,7 +295,6 @@
     </div>
     <div class="accordion" id="price-detail">
       <div class="accordion-inner">
-        <p class="section-label">Details</p>
         <div class="detail-grid">
           <div class="detail-block">
             <h3>修正対応について</h3>
@@ -322,7 +315,6 @@
 
   <section class="section contact" id="contact" aria-labelledby="contact-title">
     <div class="section__head">
-      <p class="section__label">Contact</p>
       <h2 class="section__title" id="contact-title">
         サイト制作のコーディングで、お手伝いできることがあればご相談ください。
       </h2>

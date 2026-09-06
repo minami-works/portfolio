@@ -7,9 +7,6 @@
   border-bottom: 0;
   border-top: 1px solid $color-line;
 
-  .section__label {
-    color: $color-green;
-  }
   .section__title {
     color: $color-text;
   }
@@ -43,7 +40,7 @@
     align-items: center;
     min-height: 36px;
     border: 1px solid rgba($color-green, 0.35);
-    border-radius: 999px;
+    border-radius: 8px;
     color: $color-sub;
     font-size: 12px;
     letter-spacing: 0.04em;
@@ -137,7 +134,7 @@
     min-height: 44px; // タップ領域の確保
     padding: 10px 28px;
     border: 1px solid $color-sub;
-    border-radius: 999px;
+    border-radius: 4px;
     background: transparent;
     font-size: 13px;
     cursor: pointer;

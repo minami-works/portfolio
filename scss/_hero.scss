@@ -42,15 +42,6 @@
     animation: heroFadeIn 0.8s ease both;
   }
 
-  &__kicker {
-    margin-bottom: 12px;
-    color: $color-green;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-
   &__title {
     max-width: 560px;
     font-size: clamp(38px, 7vw, 72px);

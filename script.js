@@ -52,24 +52,6 @@ navLinks.querySelectorAll(".header__nav-link").forEach((link) => {
   link.addEventListener("click", closeMenu);
 });
 
-const fadeTargets = document.querySelectorAll(".js-fade-in");
-
-if (fadeTargets.length) {
-  const fadeObserver = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          obs.unobserve(entry.target); // 一度表示したら監視終了（重くしない）
-        }
-      });
-    },
-    { threshold: 0.15 }, // 要素が15%見えたら発火
-  );
-
-  fadeTargets.forEach((target) => fadeObserver.observe(target));
-}
-
 const backToTop = document.querySelector(".back-to-top");
 
 if (backToTop) {
